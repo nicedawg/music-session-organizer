@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+
+  web:
+    build:
+      context: .
+      args:
+        DATABASE_URL: $DATABASE_URL
+        SECRET_KEY_BASE: $SECRET_KEY_BASE
+    ports: 
+      - "4000:4000"
+    depends_on:
+      - db
+    env_file:
+      - .env
+    volumes:
+      - .:/opt/music-session-organizer:cached
