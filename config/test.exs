@@ -5,7 +5,7 @@ config :music_session_organizer, MusicSessionOrganizer.Repo,
   username: "postgres",
   password: "postgres",
   database: "music_session_organizer_test",
-  hostname: "localhost",
+  hostname: "db",
   pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,

@@ -42,5 +42,7 @@ defmodule MusicSessionOrganizerWeb.Endpoint do
     key: "_music_session_organizer_key",
     signing_salt: "keOZMliZ"
 
+  plug Pow.Plug.Session, otp_app: :music_session_organizer
+
   plug MusicSessionOrganizerWeb.Router
 end

@@ -17,6 +17,10 @@ config :music_session_organizer, MusicSessionOrganizerWeb.Endpoint,
   render_errors: [view: MusicSessionOrganizerWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: MusicSessionOrganizer.PubSub, adapter: Phoenix.PubSub.PG2]
 
+config :music_session_organizer, :pow,
+  user: MusicSessionOrganizer.Users.User,
+  repo: MusicSessionOrganizer.Repo
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

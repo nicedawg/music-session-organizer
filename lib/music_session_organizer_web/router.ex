@@ -1,5 +1,6 @@
 defmodule MusicSessionOrganizerWeb.Router do
   use MusicSessionOrganizerWeb, :router
+  use Pow.Phoenix.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,8 +14,19 @@ defmodule MusicSessionOrganizerWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", MusicSessionOrganizerWeb do
+  pipeline :protected do
+    plug Pow.Plug.RequireAuthenticated,
+      error_handler: Pow.Phoenix.PlugErrorHandler
+  end
+
+  scope "/" do
     pipe_through :browser
+
+    pow_routes()
+  end
+
+  scope "/", MusicSessionOrganizerWeb do
+    pipe_through [:browser]
 
     get "/", PageController, :index
   end
