@@ -10,6 +10,8 @@ services:
     build:
       context: .
       args:
+        USER_ID: ${USER_ID:-0}
+        GROUP_ID: ${GROUP_ID:-0}
         DATABASE_URL: $DATABASE_URL
         SECRET_KEY_BASE: $SECRET_KEY_BASE
     ports: 
