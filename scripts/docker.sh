@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
 mix deps.get
-cd assets && npm install && cd ..
+npm install
 mix ecto.setup
 mix phx.server
