@@ -29,7 +29,7 @@ defmodule MusicSessionOrganizerWeb.Router do
     pipe_through [:browser]
 
     get "/", PageController, :index
-    get "/app", AppController, :index
+    get "/app*path", AppController, :index
   end
 
   scope "/api", MusicSessionOrganizerWeb do

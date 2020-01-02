@@ -1,6 +1,6 @@
-import css from "../css/app.css"
+import '../css/app.css';
 
-import "phoenix_html"
+import 'typeface-roboto'
 
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
