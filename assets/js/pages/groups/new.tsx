@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import GroupList from '../components/GroupList'
+import GroupNew from '../../components/GroupNew'
 
-export default class Groups extends React.Component {
+export default class GroupsNew extends React.Component {
   render() {
     return(
       <>
         <h4>Groups</h4>
-        <GroupList />
+        <GroupNew />
         <Link to="/app/groups/new">Add New Group</Link>
       </>
     );
